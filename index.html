@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Out demo</title>
+</head>
+<body>
+<div id="lightningout"></div>
+
+<script src="https://eliterecreationalfinance--dev.sandbox.my.site.com/lightning/lightning.out.js"></script>
+<script>
+    $Lightning.use(
+        'c:DemoOutApplication', // name of the Lightning app
+        function () {
+            // Callback once framework and app loaded
+            $Lightning.createComponent(
+                'c:demoOutForm', // top-level component of your app
+                {}, // attributes to set on the component when created
+                'lightningout', // the DOM location to insert the component
+                function (cmp) {
+                    console.log('Created');
+                    // callback when component is created and active on the page
+                }
+            );
+        },
+        'https://eliterecreationalfinance--dev.sandbox.my.site.com' // Site endpoint
+    );
+</script>
+</body>
+</html>
