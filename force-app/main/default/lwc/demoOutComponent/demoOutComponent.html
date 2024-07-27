@@ -1,0 +1,34 @@
+<template>
+
+    <div class="slds-grid slds-grid_vertical slds-align_absolute-center">
+        <div class="slds-col" lwc:if={isLeadCreated}>
+            <lightning-icon icon-name="action:approval" size="large"></lightning-icon>
+        </div>
+
+        <template lwc:else>
+            <div class="slds-col slds-size_full slds-align_absolute-center">
+                <div class="slds-size_6-of-12">
+                    <lightning-input type="text" label="First Name" class="slds-m-around_small"
+                                     onchange={handleLastNameChange} value={leadRecord.LastName}
+                                     required></lightning-input>
+                    <lightning-input type="text" label="Last Name" class="slds-m-around_small"
+                                     onchange={handleFirstNameChange} value={leadRecord.FirstName}
+                                     required></lightning-input>
+                    <lightning-input type="text" label="Company" class="slds-m-around_small"
+                                     onchange={handleCompanyChange}
+                                     value={leadRecord.Company} required></lightning-input>
+                    <lightning-input type="email" label="Email" class="slds-m-around_small"
+                                     onchange={handleEmailChange}
+                                     value={leadRecord.Email}></lightning-input>
+                    <lightning-input type="tel" label="Phone Number" class="slds-m-around_small"
+                                     onchange={handlePhoneChange} value={leadRecord.Phone}></lightning-input>
+                </div>
+            </div>
+
+            <div class="slds-col slds-align_absolute-center">
+                <lightning-button label="Apply" onclick={handleApply} variant="brand-outline"></lightning-button>
+            </div>
+
+        </template>
+    </div>
+</template>

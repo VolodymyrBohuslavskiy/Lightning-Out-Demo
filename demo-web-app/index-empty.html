@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="lightningout"></div>
+
+<script src="https://nosoftware-velocity-3123-dev-ed.scratch.my.site.com/lightning/lightning.out.js"></script>
+<script>
+    $Lightning.use(
+        'c:DemoOutContainer', // name of the Lightning app
+        function () {
+            // Callback once framework and app loaded
+            $Lightning.createComponent(
+                'c:demoOutComponent', // top-level component of your app
+                {}, // attributes to set on the component when created
+                'lightningout', // the DOM location to insert the component
+                function (cmp) {
+                    console.log('Lightning Out Component loaded');
+                    // callback when component is created and active on the page
+                }
+            );
+        },
+        'https://nosoftware-velocity-3123-dev-ed.scratch.my.site.com' // Site endpoint
+    );
+</script>
+</body>
+</html>
